@@ -4,10 +4,10 @@ import {FcLike , FcComments, FcDislike} from 'react-icons/fc';
 
 
 type CardProps = {
-    
+    post:any
 };
 
-const Card:React.FC<CardProps> = () => {
+const Card:React.FC<CardProps> = ({post}) => {
     
     return (
        <main className='w-full '>
@@ -17,7 +17,7 @@ const Card:React.FC<CardProps> = () => {
   </div>
 <div className='px-4 w-1/2'>
     <div className='h-4/5'>
-    <h2 className='font-bold text-lg'>Shoes!</h2>
+    <h2 className='font-bold text-lg'>{post.title}</h2>
     <p className=' text-sm'>If a dog chews shoes, whose shoes does he choose?</p>
     </div>
     <div className='h-1/5 flex'>
