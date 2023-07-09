@@ -13,3 +13,10 @@ export const fetchPosts = selector<any[]>({
     return data.data.children.map((child: any) => child.data);
   },
 });
+
+
+
+
+
+
+

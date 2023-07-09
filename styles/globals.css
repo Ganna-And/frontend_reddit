@@ -19,4 +19,12 @@
     @apply w-8 mx-5 active:w-10
  }
 
+ .list{
+  @apply flex shadow-lg  flex-wrap md:flex-col md:fixed md:w-0 md:align-middle
+ }
+
+ .text-ellipsis{
+ @apply whitespace-nowrap overflow-hidden overflow-ellipsis h-1/3
+ }
+
 }

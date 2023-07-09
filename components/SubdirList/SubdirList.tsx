@@ -1,21 +1,23 @@
 import React from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
+import CommunitySnippet from '@/components/SubdirList/CommunitySnippet';
 
-type SubdirListProps = {
-    
+type SubdirListProps = {};
+
+const SubdirList: React.FC<SubdirListProps> = () => {
+  const communityList = ['javascript', 'tailwind', 'next', 'recoilhacks', 'react', 'reduxjs', 'node', 'Firebase', 'cssnews', 'typescript'];
+
+  return (
+    <div className='list'>
+    {communityList.map((community) => (
+      <Link href={`/r/${community}`} key={community}>
+        <button className='btn btn-primary btn-outline btn-sm m-2' /* onClick={() => handleCommunityClick(community) }*/>
+          <CommunitySnippet community={community} />
+        </button>
+      </Link>
+    ))}
+  </div>
+  );
 };
 
-const SubdirList:React.FC<SubdirListProps> = () => {
-    const communityList=['r/javascript','r/tailwind', '/r/next','r/recoilhacks', 'r/react/','r/reduxjs','r/node','r/Firebase/','r/cssnews/', 'r/typescript'];
-    return (
-      <div className="container flex flex-wrap justify-center px-4 shadow-2xl md:w-full md:flex-col ">
-        <button className="m-2 btn text-sm">
-        <div className="avatar ">
-  <div className="w-10 rounded-full mr-1 ring-secondary  ring-1 ">
-    <Image width={10} height={10} src="https://upload.wikimedia.org/wikipedia/commons/b/b0/NewTux.svg" alt="hey" />
-  </div>
-</div> subditName</button> 
-      </div>
-    );
-}
 export default SubdirList;

@@ -11,7 +11,7 @@ useFetchPostsEffect();
  
   return (
     <main className="flex flex-col  md:flex-row">
-      <section className="invisible h-0 md:visible md:w-1/3">
+      <section className="invisible h-0 md:flex-col md:visible md:w-1/3  ">
       <SubdirList/>
       </section>
       <section className="visible w-full md:visible md:w-0">
