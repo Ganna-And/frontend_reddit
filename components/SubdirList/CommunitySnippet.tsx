@@ -12,7 +12,7 @@ type CommunityPageProps = {
 
 const CommunityPage: React.FC<CommunityPageProps> = ({ community }) => {
   const router = useRouter();
-
+  
   return (
     <div className='flex'>
         <FaSun />
