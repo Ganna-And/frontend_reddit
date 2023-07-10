@@ -11,7 +11,10 @@ module.exports = {
    "xxs":'0.5rem',
       },
        extend: {
-    
+        fontFamily: {
+          monoton: ['Monoton', 'sans-serif'],
+          display: ['Display', 'sans-serif'],
+        },
         daisyui: {
           themes: [
             {
@@ -20,7 +23,7 @@ module.exports = {
      "secondary": "#3F3B6C",      
      "accent": "#a21caf",     
      "neutral": "#2a323c",      
-     "base-100": "#1d232a",      
+     "base-100": "white",      
               },
               light:{
                 "base-100": "#f5f3f2",

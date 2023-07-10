@@ -1,5 +1,5 @@
 import React from 'react';
-import {FcLike , FcComments, FcDislike} from 'react-icons/fc';
+import {FaThumbsUp , FaComments, FaThumbsDown} from 'react-icons/fa';
 import { truncateText } from '@/helper/truncateText';
 
 
@@ -28,16 +28,16 @@ const Card:React.FC<CardProps> = ({post}) => {
     </div>
     <div className='h-1/5 flex'>
       <div className='svg-sm'>
-        {<FcLike className='w-full h-full '/>}
-         <span className='indicator-c' >{post.score}</span>
+        {<FaThumbsUp className='w-full h-full fill-primary'/>}
+         <span className='indicator-c text-white bg-black' >+{post.score}</span>
       </div> 
       <div className='svg-sm'>
-        {<FcComments className='w-full h-full '/>}
-         <span className='indicator-c' >{post.num_comments}</span>
+        {<FaComments className='w-full h-full fill-accent '/>}
+         <span className='indicator-c bg-white text-black' >+{post.num_comments}</span>
       </div> 
       <div className='svg-sm'>
-        {<FcDislike className='w-full h-full '/>}
-         <span className='indicator-c' >{post.downs}</span>
+        {<FaThumbsDown className='w-full h-full fill-primary  '/>}
+         <span className='indicator-c text-white bg-black ' >+{post.downs}</span>
       </div> 
       
       

@@ -13,11 +13,18 @@ type NavbarProps = {
 const Navbar:React.FC<NavbarProps> = () => {
     
     return (
-        <div className="navbar bg-base-100">
-  <div className="flex-1 mt-3 ">
-    <a className="m-0 text-xl normal-case btn btn-ghost">Front<span className='text-accent'>
-      <FaReddit className='stroke-0 fill-accent'/>end</span></a>
-  </div>
+        <div className="navbar fixed ">
+  <div className="flex-1 mt-3  ml-4 ">
+    <a className="m-0 flex  font-monoton btn border-secondary pt-0.5 h-full "> 
+    <span className="text-4xl flex-col font-mono">Front
+  <FaReddit className=' w-10 h-7 text-accent  '/>
+  </span>
+   <span className='flex flex-col'>
+      <span className="h-4 text-secondary text-sm ">e</span>
+      <span className="h-4 text-secondary text-sm">n</span>
+      <span className="h-4 text-secondary text-sm">d</span>
+      </span></a>
+   </div>
     <Search/>
     <SwitchTheme/>
     <AuthButton />

@@ -9,8 +9,8 @@ type CollapseSubdirProps = {
 const CollapseSubdir:React.FC<CollapseSubdirProps> = () => {
     
     return (
-        <details className="collapse bg-base-200 flex">
-  <summary className="collapse-title text-xl font-medium">Click to open subdirectories</summary>
+        <details className="collapse  flex bg-gradient-to-r from-primary via-accent to-secondary">
+  <summary className="collapse-title text-xl font-medium text-center  text-black ">Click to open subdirectories</summary>
   <div className="collapse-content"> 
     <SubdirList/>
   </div>

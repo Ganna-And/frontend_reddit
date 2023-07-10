@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('/fonts/monoton.woff');
+@import url('/fonts/display.ttf');
 
  @layer base{
   body {
@@ -13,14 +15,14 @@
 @layer components{
   
   .indicator-c{
-    @apply absolute translate-x-4 -translate-y-5 font-extrabold text-xxs  pr-1 rounded
+    @apply absolute translate-x-7 -translate-y-5 font-extrabold text-xxs  pr-1 rounded
   }
   .svg-sm{
     @apply w-8 mx-5 active:w-10
  }
 
  .list{
-  @apply flex shadow-lg  flex-wrap md:flex-col md:fixed md:w-0 md:align-middle
+  @apply flex shadow-lg  flex-wrap md:flex-col md:fixed  
  }
 
  .text-ellipsis{
