@@ -1,10 +1,49 @@
 import { atom, selector } from "recoil";
 
+export interface Post {
+  id: string;
+  title: string;
+  selftext: string;
+  author: string;
+  created_utc: number;
+  score: number;
+  num_comments: number;
+  downs: number;
+  isSelected: boolean;
+}
 
-export const postsState = atom<any[]>({
+
+
+export const postsState = atom<Post[]>({
   key: "postsState",
   default: [],
 });
+
+export const selectedPostState = atom<string >({
+  key:'selectedPostState',
+  default: ''
+})
+
+export const selectedPosts = selector({
+  key: 'selectedPosts',
+  get: ({ get }) => {
+    const posts = get(postsState);
+    const selectedPost = get(selectedPostState)
+
+    return posts.filter(
+      (post) => post.id === selectedPost
+       
+    );
+  },
+});
+
+export const commentsState = atom<any[]>({
+  key: 'commentsState',
+  default: [],
+});
+
+
+
 /* 
 export const communityState =atom({
   key:'communityState',
@@ -66,7 +105,4 @@ export const filteredPosts = selector({
     );
   },
 });
-
-
-
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { useSetRecoilState } from 'recoil';
-import { postsState } from '../atoms/postsAtom'
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { postsState } from '../atoms/postsAtom';
+import { commentsState } from '../atoms/postsAtom';
 
 export const useFetchPostsEffect = () => {
   const setPosts = useSetRecoilState(postsState);
@@ -40,3 +41,24 @@ export const useFetchSubdirPosts = (community:string) => {
   }, [setPosts, community]);
 };
 
+
+export const useFetchComments = (permalink:any) => {
+  const setComments = useSetRecoilState(commentsState)
+
+  useEffect(() => {
+    const fetchCommentsData = async () => {
+      try {
+        const response = await fetch(`https://www.reddit.com/${permalink}.json`);
+        const data = await response.json();
+        console.log(data)
+        const comments = data[1].data.children.map((child:any) => child.data);
+        setComments(comments)
+        console.log(comments);
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
+    };
+
+    fetchCommentsData();
+  }, []);
+};

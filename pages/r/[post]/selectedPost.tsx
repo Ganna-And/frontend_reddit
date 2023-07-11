@@ -56,4 +56,3 @@ const router = useRouter();
 };
 
 export default Card;
-
