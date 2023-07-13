@@ -20,18 +20,17 @@ const FullPost: React.FC = () => {
   const { index } = router.query;
   const {community}= router.query;
   const posts = useRecoilValue(filteredPosts);
-  const post = posts[index];
+  const post = posts[Number(index)];
   const permalink = post?.permalink;
   const comments =useRecoilValue(commentsState)
+  
+   
   
 useFetchSubdirPosts();
 useFetchComments(permalink);
 
-console.log(`comments ${comments[0]}`)
+console.log(`index ${router.query.index}`)
  
-  
-  console.log(`post is  here:${community}`);
-  console.log(`permalink ${permalink}`); 
 
   /* const comments = useRecoilValue(commentsState);
 
