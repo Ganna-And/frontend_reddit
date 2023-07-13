@@ -29,7 +29,7 @@ const FullPost: React.FC = () => {
 useFetchSubdirPosts();
 useFetchComments(permalink);
 
-console.log(`index ${router.query.index}`)
+console.log(`index ${permalink}`)
  
 
   /* const comments = useRecoilValue(commentsState);

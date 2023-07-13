@@ -31,7 +31,7 @@ const router = useRouter();
         <div className="px-4 w-1/2">
           <div className="h-4/5">
             <h3 className="font-bold text-lg">{post.title}</h3>
-            <p className="overflow-hidden">{truncateText(post.selftext, 125)}</p>
+            <p className="overflow-hidden">{truncateText(post.selftext, 90)}</p>
             <p className="italic">posted by: {post.author}</p>
             
           </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaThumbsUp, FaComments, FaThumbsDown } from 'react-icons/fa';
+import { Comment } from '@/atoms/postsAtom';
 
 type CommentsProps = {
     post: any;
@@ -10,6 +11,8 @@ type CommentsProps = {
 const Comments:React.FC<CommentsProps> = ({post, comments}) => {
 
     const [viewComments, setViewComments] = useState(false)
+   
+    
     
     return (
         <div className="w-full mt-6 z-20 shadow-md mb-8 h-full flex-col justify-center items-center md:w-full md:mt-8  px-10">
@@ -28,8 +31,8 @@ const Comments:React.FC<CommentsProps> = ({post, comments}) => {
           </div>
           <button className='btn-post ' onClick={()=>{setViewComments(true)}}>View comments</button>
         </div>
-       {viewComments && <ul className='mt-3 mb-10'>{comments?.map(comment=>(
-                <li key={comment} className='rounded-lg border bottom-1 border-primary shadow-lg px-4 py-4 mb-2 '>{comment.author}:   {comment.body} </li>
+       {viewComments && <ul className='mt-3 mb-10'>{comments?.map((comment: Comment)=>(
+                <li key={comment.id} className='rounded-lg border bottom-1 border-primary shadow-lg px-4 py-4 mb-2 '>{comment.author}:   {comment.body} </li>
             ))}</ul>}
        
       </div>

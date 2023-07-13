@@ -66,3 +66,15 @@ export const communityState = atom<string>({
   key:'communityState',
   default:'javascript'
 });
+
+
+export type Comment = {
+  author: string;
+  body: string;
+  id:string
+};
+
+export type CommentsProps = {
+  post: any;
+  comments: Comment[];
+};
