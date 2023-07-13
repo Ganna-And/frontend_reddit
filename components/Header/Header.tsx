@@ -17,7 +17,7 @@ const Header:React.FC<HeaderProps> = () => {
     return (
         <div className="navbar fixed md:px-40 z-20 ">
   <div className="flex-1 mt-3 ">
-      <Image  src={Logo} width={80} height={80} className='border border-accent border-2 rounded-lg  ' alt='logo'/>
+      <Image  src={Logo} width={80} height={80} className='border border-accent border-2 rounded-lg  ' alt='logo photo'/>
    </div>
     <Search/>
     <SwitchTheme/>
