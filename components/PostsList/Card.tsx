@@ -1,7 +1,7 @@
 // Card.jsx
 import React, {useState} from 'react';
 import { FaThumbsUp, FaComments, FaThumbsDown } from 'react-icons/fa';
-import { truncateText } from '@/helper/truncateText';
+import { truncateText } from '@/helper/helpers';
 import Link from 'next/link';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Post, filteredPosts, postsState } from '@/atoms/postsAtom';
@@ -23,14 +23,14 @@ const router = useRouter();
 
 
   return (
-    <main className="w-full">
+    <section className="w-full">
       <div className="w-full mt-6 z-20 shadow-md h-64 flex">
         <div className="w-1/2 m-3 bg-cover rounded-lg bg-no-repeat bg-[url(https://picsum.photos/300/300)]">
           <button className="btn px-1 btn-primary m-3">{finalDate}</button>
         </div>
         <div className="px-4 w-1/2">
           <div className="h-4/5">
-            <h2 className="font-bold text-lg">{post.title}</h2>
+            <h3 className="font-bold text-lg">{post.title}</h3>
             <p className="overflow-hidden">{truncateText(post.selftext, 125)}</p>
             <p className="italic">posted by: {post.author}</p>
             
@@ -51,7 +51,7 @@ const router = useRouter();
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

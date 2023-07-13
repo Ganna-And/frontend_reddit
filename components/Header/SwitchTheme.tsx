@@ -30,7 +30,7 @@ const SwitchTheme = () => {
   }, [theme]);
 
   return (
-    <button className="ml-3 btn btn-md btn-circle btn-outline btn-secondary" onClick={toggleTheme}>
+    <button className="ml-3 btn btn-md btn-circle btn-outline btn-primary border-accent border-2" onClick={toggleTheme}>
       {theme === 'dark' ? (
         <FaMoon className="w-4 h-4" />
       ) : (

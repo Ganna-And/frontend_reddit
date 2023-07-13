@@ -12,7 +12,7 @@ const Search = () => {
   return (
     <div className="flex-none gap-1">
     <div className="form-control">
-      <input type="text" placeholder="Search" value={term} onChange={(e)=>setTerm(e.target.value)} className="input input-bordered md:w-auto lg:w-400px" />
+      <input type="text" placeholder="Search" value={term} onChange={(e)=>setTerm(e.target.value)} className="input  md:w-auto lg:w-400px border-accent border-2" />
     </div>
    </div>
   )

@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { postsState } from '../atoms/postsAtom';
 import { commentsState } from '../atoms/postsAtom';
+import { useRouter } from 'next/router';
 
-export const useFetchPostsEffect = () => {
+/* export const useFetchPostsEffect = () => {
   const setPosts = useSetRecoilState(postsState);
 
   useEffect(() => {
@@ -16,15 +17,17 @@ export const useFetchPostsEffect = () => {
     };
     fetchPostsData();
   }, [setPosts]);
-};
+}; */
 
-export const useFetchSubdirPosts = (community:string) => {
+export const useFetchSubdirPosts = () => {
   const setPosts = useSetRecoilState(postsState);
-
+  const router = useRouter();
+  const community = router.query
+ 
   useEffect(() => {
   const fetchPostsData = async () => {
     try {
-  const response = await fetch(`https://www.reddit.com/r/${community}.json`);
+  const response = await fetch(`https://www.reddit.com/r/${community.community}.json`);
   if(!response.ok){
     throw new Error(`Failed to fetch subreddit posts. Status: ${response.status}`)
   }
@@ -43,7 +46,8 @@ export const useFetchSubdirPosts = (community:string) => {
 
 
 export const useFetchComments = (permalink:any) => {
-  const setComments = useSetRecoilState(commentsState)
+  const setComments = useSetRecoilState(commentsState);
+ 
 
   useEffect(() => {
     const fetchCommentsData = async () => {
@@ -60,5 +64,5 @@ export const useFetchComments = (permalink:any) => {
     };
 
     fetchCommentsData();
-  }, []);
+  }, [setComments]);
 };

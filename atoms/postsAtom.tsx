@@ -10,7 +10,10 @@ export interface Post {
   num_comments: number;
   downs: number;
   isSelected: boolean;
+  subreddit:string;
+  permalink:string;
 }
+
 
 
 
@@ -19,73 +22,26 @@ export const postsState = atom<Post[]>({
   default: [],
 });
 
-export const selectedPostState = atom<string >({
+export const selectedIndexState = atom<number>({
   key:'selectedPostState',
-  default: ''
+  default: -1
 })
 
-export const selectedPosts = selector({
-  key: 'selectedPosts',
-  get: ({ get }) => {
-    const posts = get(postsState);
-    const selectedPost = get(selectedPostState)
-
-    return posts.filter(
-      (post) => post.id === selectedPost
-       
-    );
-  },
-});
 
 export const commentsState = atom<any[]>({
   key: 'commentsState',
   default: [],
 });
 
-
-
-/* 
-export const communityState =atom({
-  key:'communityState',
-  default:''
-});
- */
-/* export const fetchInitialPosts = selector({
-  key: 'fetchInitialPosts',
-  get: async({ get, set }) => {
-     try{
-      const response = await fetch(`https://www.reddit.com/r/javascript.json`);
-      const data = await response.json();
-      const posts = data?.data?.children?.map((child: any) => child.data) ||[];
-      set(postsState, posts)
-    return posts}
-      catch(error:any){
-        console.log(error.message)
-      }
-  }
-}) */
-
-/* export const subredditPostsSelector = selector({
-  key: 'subredditPostsSelector',
+export const getPost = selector({
+  key: 'getPost',
   get: ({ get }) => {
-    const community = get(communityState)
-    const fetchPostsData = async (community:string) => {
-    try{const response = await fetch(`https://www.reddit.com/r/${community}.json`);
-      const data = await response.json();
-      const posts = data?.data?.children?.map((child: any) => child.data);
-      console.log(posts)
-    // Perform any computation or filtering on the fetched posts
-    // Return the desired value
-    return posts;
-  }
-    catch(error:any){
-      console.log(error.message)
-      return [];
-    }
-  }
-  return fetchPostsData(community)
-}
-}); */
+    const posts = get(postsState);
+    const selectedIndex = get(selectedIndexState)
+
+    return posts[selectedIndex]}
+});
+
 
 export const searchTermState = atom({
   key: 'searchTermState', 
@@ -106,3 +62,7 @@ export const filteredPosts = selector({
   },
 });
 
+export const communityState = atom<string>({
+  key:'communityState',
+  default:'javascript'
+});
