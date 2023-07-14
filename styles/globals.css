@@ -6,15 +6,15 @@
 
  @layer base{
 body {
-      @apply dark:bg-gray-800 bg-white;  
+      @apply dark:bg-gray-800 bg-white min-h-screen  
   }
   
 header {
-@apply flex flex-col  md:flex-row
+@apply flex flex-col w-full h-1/6 fixed md:flex-row   backdrop-blur-lg
 }
 
 main {
- @apply w-full h-full justify-center align-middle flex flex-col md:w-4/6 md:justify-center md:align-middle md:mt-24 md:ml-64
+ @apply  justify-center pt-36 z-0 items-center flex flex-col w-full md:justify-center md:items-center  md:pl-[17%] md:pt-24 
 }
 
 h1{
@@ -30,11 +30,11 @@ h2{
 @layer components{
 
   .nav{
-    @apply invisible h-0 md:flex-col md:visible md:w-1/6 md:ml-10 md:mt-32  md:h-screen md:shadow-lg md:justify-center md:fixed 
+    @apply invisible h-0 md:flex-col md:visible md:w-1/6 md:mt-32  md:h-screen md:shadow-lg md:justify-center md:fixed 
   }
   
   .navMob{
-    @apply visible w-full mt-24  md:visible md:w-0 
+    @apply visible w-full m-3 md:visible md:w-0 
   }
   .indicator-c{
     @apply absolute translate-x-7 -translate-y-5 font-extrabold  pr-1 rounded text-xxs

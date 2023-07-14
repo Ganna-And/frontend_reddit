@@ -10,16 +10,19 @@ type LayoutProps = {
   
   const Layout: React.FC<LayoutProps> = ({ children }) => {
     return(
-      <header>
+     <>
+     <header>
         <Header />
          <nav className="nav">
       <TopicsList/>
       </nav>
       <nav className="navMob">
         <TopicsListMob/>
-      </nav>
+      </nav> 
+       </header> 
     <main>{children}</main>
-    </header>) 
+    </>
+   ) 
   }
   
   export default Layout;
