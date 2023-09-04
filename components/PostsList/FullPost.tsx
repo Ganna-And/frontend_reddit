@@ -31,17 +31,10 @@ useFetchComments(permalink);
 
 console.log(`index ${permalink}`)
  
-
-  /* const comments = useRecoilValue(commentsState);
-
-console.log(`permalink are here:${permalink.permalink}`); */
-
-
-
   return (
     
    <>
-   <section className="w-full h-full flex flex-col items-center">
+   <section className="w-full h-full flex-col items-center">
      <PostInfo post={post}/>
       <PostImg post={post} />
       <PostText post={post} />

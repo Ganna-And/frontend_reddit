@@ -11,7 +11,7 @@ type LayoutProps = {
   const Layout: React.FC<LayoutProps> = ({ children }) => {
     return(
      <>
-     <header>
+     <header className='relative'>
         <Header />
          <nav className="nav">
       <TopicsList/>

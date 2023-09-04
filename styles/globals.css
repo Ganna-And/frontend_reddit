@@ -10,11 +10,11 @@ body {
   }
   
 header {
-@apply flex flex-col w-full h-1/6 fixed md:flex-row   backdrop-blur-lg
+@apply flex flex-col w-[90%] h-1/6 fixed md:flex-row   backdrop-blur-lg
 }
 
 main {
- @apply  justify-center pt-36 z-0 items-center flex flex-col w-full md:justify-center md:items-center  md:pl-[17%] md:pt-24 
+ @apply  justify-center z-0 items-center flex flex-col w-full md:justify-center md:items-center  md:pl-[17%] md:pt-0
 }
 
 h1{
@@ -61,4 +61,5 @@ h2{
   .container{
     @apply h-screen overflow-auto flex flex-col items-center justify-center 
   }
+  
 }
