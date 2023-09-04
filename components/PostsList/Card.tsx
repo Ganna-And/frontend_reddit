@@ -25,13 +25,13 @@ const Card: React.FC<CardProps> = ({ post }) => {
 
   return (
     <section className="w-full">
-      <div className="w-full mt-6 z-20 shadow-md h-[30rem] lg:h-64 flex md:flex-row lg:flex-row flex-col">
-        <div className=" h-full md:w-1/2 w-[90%] m-3 bg-cover rounded-lg bg-no-repeat bg-[url(https://picsum.photos/300/300)] lg:w-[30%]">
+      <div className="w-full mt-6 z-20 shadow-md h-[30rem] lg:h-64 flex md:flex-col lg:flex-row flex-col">
+        <div className=" h-full lg:h-[95%] md:w-[90%] w-[90%] m-3 bg-cover rounded-lg bg-no-repeat bg-[url(https://picsum.photos/300/300)] lg:w-[40%]">
           <button className="btn px-1 btn-primary m-3">{finalDate}</button>
         </div>
-        <div className="px-4 w-full">
+        <div className="px-4 w-full ">
           <div className="h-4/5">
-            <h3 className="font-bold text-lg">
+            <h3 className="font-bold text-lg lg:text-2xl">
               {truncateText(post.title, 30)}
             </h3>
             <p className="overflow-hidden">{truncateText(post.selftext, 90)}</p>

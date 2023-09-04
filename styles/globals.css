@@ -56,7 +56,7 @@ h2{
  }
 
  .btn-post{
-  @apply btn btn-accent btn-xs shadow-lg m-2  text-sm
+  @apply btn btn-xs shadow-sm m-2  text-sm shadow-accent hover:shadow-lg
  }
   .container{
     @apply h-screen overflow-auto flex flex-col items-center justify-center 

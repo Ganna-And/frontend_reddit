@@ -13,7 +13,7 @@ type LayoutProps = {
      <>
      <header className='relative lg:h-[6rem]'>
         <Header />
-         <nav className="nav">
+         <nav className="nav lg:flex items-center  lg:h-[90vh]">
       <TopicsList/>
       </nav>
       <nav className="navMob">

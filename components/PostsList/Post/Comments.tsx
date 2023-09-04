@@ -15,7 +15,7 @@ const Comments:React.FC<CommentsProps> = ({post, comments}) => {
     
     
     return (
-        <div className="w-full mt-6 z-20 shadow-md mb-8 h-full flex-col justify-center items-center md:w-full md:mt-8  px-10">
+        <div className="w-full mt-6 z-20 shadow-md mb-8 h-full flex-col justify-center items-center md:w-full md:mt-8 px-6 lg:px-0 lg:pr-10">
         <div className="flex w-full">
           <div className="svg-sm">
             {<FaThumbsUp className="w-full h-full fill-primary" />}

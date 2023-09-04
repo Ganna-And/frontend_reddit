@@ -11,7 +11,7 @@ const TopicsListMob:React.FC<TopicsListMobProps> = () => {
     return (
         <details className="collapse  
         ">
-  <summary className="collapse-title text-xl font-medium text-center  text-black ">Click to open subdirectories</summary>
+  <summary className="collapse-title text-xl font-medium text-center ">Click to open subdirectories</summary>
   <div className="collapse-content "> 
     <TopicsList/>
   </div>
