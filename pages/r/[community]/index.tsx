@@ -6,7 +6,7 @@ const CommunityPage: NextPage = () => {
   useFetchSubdirPosts();
 
   return (
-    <section className="flex flex-col  md:flex-row">
+    <section className="flex flex-col  md:flex-row w-[90%]">
       <PostsList />
     </section>
   );

@@ -14,7 +14,7 @@ header {
 }
 
 main {
- @apply  justify-center z-0 items-center flex flex-col w-full md:justify-center md:items-center  md:pl-[17%] md:pt-0
+ @apply  justify-center z-0 items-center flex flex-col w-full md:justify-center md:items-center  md:pl-[17%] md:pt-0 lg:items-start
 }
 
 h1{

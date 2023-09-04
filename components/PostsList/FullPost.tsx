@@ -36,8 +36,10 @@ console.log(`index ${permalink}`)
    <>
    <section className="w-full h-full flex-col items-center">
      <PostInfo post={post}/>
+     <div className='lg:flex '>
       <PostImg post={post} />
       <PostText post={post} />
+      </div>
       <Comments post={post} comments={comments}/>
       
     </section>

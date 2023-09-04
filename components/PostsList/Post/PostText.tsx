@@ -7,7 +7,7 @@ type PostTextProps = {
 const PostText:React.FC<PostTextProps> = ({post}) => {
     
     return (
-        <div className="px-8 w-full mt-5 ">
+        <div className="px-8 w-full mt-5 text-center ">
             <h2 className="font-bold text-center text-lg">{post?.title}</h2>
             <p>{post?.selftext}</p>
           </div>
