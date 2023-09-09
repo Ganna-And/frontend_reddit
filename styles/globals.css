@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/css?family=Vibur);
+@import url('https://fonts.cdnfonts.com/css/modern-typewriter');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,16 +7,27 @@
 @import url('/fonts/display.ttf');
 
  @layer base{
-body {
-      @apply dark:bg-gray-800 bg-white min-h-screen  
+  [data-theme='light'] {
+    /* Styles for the light theme */
+    background-image: url('https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+    color: #000;
+    min-height: 100vh;
+    min-width: 100%;
   }
   
+  [data-theme='dark'] {
+    /* Styles for the dark theme */
+    background-image: url('https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    color: #fff;
+    min-height: 100vh;
+    min-width: 100%;
+  }
 header {
-@apply flex flex-col w-[90%] h-1/6 fixed md:flex-row   backdrop-blur-lg
+@apply flex flex-col w-full h-1/6 fixed md:flex-row   
 }
 
 main {
- @apply  justify-center z-0 items-center flex flex-col w-full md:justify-center md:items-center  md:pl-[17%] md:pt-0 lg:items-start
+ @apply  justify-center z-0 items-center flex flex-col w-full md:justify-center md:items-center  md:pl-[17%] md:pt-0 lg:items-start font-typewriter
 }
 
 h1{
@@ -28,9 +41,8 @@ h2{
 }
 
 @layer components{
-
   .nav{
-    @apply invisible h-0 md:flex-col md:visible md:w-1/6 md:mt-32  md:h-screen md:shadow-lg md:justify-center md:fixed 
+    @apply invisible h-0 md:flex-col md:visible md:w-1/6 md:mt-32  md:h-screen md:justify-center md:fixed font-logo
   }
   
   .navMob{
@@ -54,12 +66,20 @@ h2{
  .text-ellipsis{
  @apply whitespace-nowrap overflow-hidden overflow-ellipsis h-1/3
  }
+ .btn-post {
+  @apply btn btn-sm lg:w-[8rem] lg:h-[2.5rem] shadow-custom m-2 text-sm shadow-accent backdrop-blur-sm hover:shadow-custom-hover bg-transparent;
+}
 
- .btn-post{
-  @apply btn btn-xs shadow-sm m-2  text-sm shadow-accent hover:shadow-lg
- }
+.btn_icons {
+  @apply btn btn-circle shadow-custom hover:shadow-custom-hover ml-4
+}
+
   .container{
     @apply h-screen overflow-auto flex flex-col items-center justify-center 
+  }
+
+  .logo {
+    @apply  text-4xl text-secondary font-logo ml-[3rem] mt-[2rem]
   }
   
 }

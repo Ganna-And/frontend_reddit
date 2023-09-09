@@ -1,13 +1,9 @@
 // Card.jsx
-import React, { useState } from "react";
+import Reac from "react";
 import { FaThumbsUp, FaComments, FaThumbsDown } from "react-icons/fa";
 import { truncateText } from "@/helper/helpers";
-import Link from "next/link";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { Post, filteredPosts, postsState } from "@/atoms/postsAtom";
 import { useRouter } from "next/router";
-import { useRecoilValue } from "recoil";
-import { useFetchSubdirPosts } from "@/hooks/useFetchPosts";
+
 
 interface CardProps {
   post: any;
@@ -25,7 +21,7 @@ const Card: React.FC<CardProps> = ({ post }) => {
 
   return (
     <section className="w-full">
-      <div className="w-full mt-6 z-20 shadow-md h-[30rem] lg:h-64 flex md:flex-col lg:flex-row flex-col">
+      <div className="w-full mt-6 z-20 shadow-custom hover:shadow-custom-hover h-[30rem] lg:h-64 flex md:flex-col lg:flex-row flex-col">
         <div className=" h-full lg:h-[95%] md:w-[90%] w-[90%] m-3 bg-cover rounded-lg bg-no-repeat bg-[url(https://picsum.photos/300/300)] lg:w-[40%]">
           <button className="btn px-1 btn-primary m-3">{finalDate}</button>
         </div>

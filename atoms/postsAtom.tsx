@@ -17,13 +17,13 @@ export interface Post {
 
 
 
-export const postsState = atom<Post[]>({
+export const postsStateAtom = atom<Post[]>({
   key: "postsState",
   default: [],
 });
 
 export const selectedIndexState = atom<number>({
-  key:'selectedPostState',
+  key:'selectedIndexState',
   default: -1
 })
 
@@ -36,7 +36,7 @@ export const commentsState = atom<any[]>({
 export const getPost = selector({
   key: 'getPost',
   get: ({ get }) => {
-    const posts = get(postsState);
+    const posts = get(postsStateAtom);
     const selectedIndex = get(selectedIndexState)
 
     return posts[selectedIndex]}
@@ -51,7 +51,7 @@ export const searchTermState = atom({
 export const filteredPosts = selector({
   key: 'filteredPosts',
   get: ({ get }) => {
-    const posts = get(postsState);
+    const posts = get(postsStateAtom);
     const term = get(searchTermState).toLowerCase();
 
     return posts.filter(

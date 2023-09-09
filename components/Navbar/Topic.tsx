@@ -15,7 +15,6 @@ const Topic: React.FC<TopicProps> = ({ community }) => {
   
   return (
     <div className='flex'>
-        <FaSun />
       <h3 className='text-center' >{community}</h3>
     </div>
   );

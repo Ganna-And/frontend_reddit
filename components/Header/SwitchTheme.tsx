@@ -1,11 +1,11 @@
 
-import { FaMoon, FaSun } from "react-icons/fa";
+import { CiCloudMoon, CiSun } from "react-icons/ci";
 import React, { useEffect, useState } from 'react';
 
 const SwitchTheme = () => {
 
   const isBrowser = typeof window !== 'undefined';
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('theme');
 
   useEffect(() => {
     if (isBrowser) {
@@ -26,15 +26,16 @@ const SwitchTheme = () => {
     if (isBrowser) {
       const body = document.body;
       body.setAttribute('data-theme', theme);
+    
     }
   }, [theme]);
 
   return (
-    <button className="ml-3 btn btn-md btn-circle btn-outline btn-primary border-accent border-2" onClick={toggleTheme}>
+    <button className="btn_icons" onClick={toggleTheme}>
       {theme === 'dark' ? (
-        <FaMoon className="w-4 h-4" />
+        <CiCloudMoon className="w-4 h-4" />
       ) : (
-        <FaSun className="w-4 h-4" />
+        <CiSun className="w-4 h-4" />
       )}
     </button>
   );

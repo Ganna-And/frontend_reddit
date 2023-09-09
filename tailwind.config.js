@@ -17,30 +17,38 @@ module.exports = {
       '4xl': '2.441rem',
       '5xl': '3.052rem',
     },
-       extend: {
-        fontFamily: {
-          monoton: ['Monoton', 'sans-serif'],
-          display: ['Display', 'sans-serif'],
-        },
-        daisyui: {
-          themes: [
-            {
-              mytheme: {
-     "primary": "#A3C7D6",     
-     "secondary": "#3F3B6C",      
-     "accent": "#a21caf",     
-     "neutral": "#2a323c",      
-     "base-100": "white",      
-              },
-              light:{
-                "base-100": "#f5f3f2",
-              }
-            },
-          ],
-        },
-      }
+    extend: {
+      fontFamily: {
+        monoton: ['Monoton', 'sans-serif'],
+        display: ['Display', 'sans-serif'],
+        logo: ['Vibur', 'sans'],
+        typewriter:['MODERN TYPEWRITER',' sans-serif']
+      },
+      animation: {
+        'blink-2': 'blink 2s linear infinite',
+        'blink-3': 'blink 3s linear infinite',
+      },
+      boxShadow: {
+        'custom': '0 0 5px cyan, 0 0 10px cyan',
+        'custom-hover': '0 0 50px cyan, 0 0 100px cyan',
+      },
     },
-
+    daisyui: {
+      themes: [
+        {
+          mytheme: {
+            "primary": "#A3C7D6",
+            "secondary": "#3F3B6C",
+            "accent": "cyan",
+            "neutral": "#2a323c",
+            "base-100": "#3F3B6C",
+          },
+          dark: { // Corrected to 'dark' instead of 'darktheme'
+            "base-100": "#f5f3f2",
+          },
+        },
+      ],
+    },
+  },
   plugins: [require("daisyui")],
 }
-

@@ -1,26 +1,12 @@
 import { useEffect } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { postsState } from '../atoms/postsAtom';
+import {useSetRecoilState } from 'recoil';
+import { postsStateAtom } from '../atoms/postsAtom';
 import { commentsState } from '../atoms/postsAtom';
 import { useRouter } from 'next/router';
 
-/* export const useFetchPostsEffect = () => {
-  const setPosts = useSetRecoilState(postsState);
-
-  useEffect(() => {
-    const fetchPostsData = async () => {
-      const response = await fetch('https://www.reddit.com/r/javascript.json');
-      const data = await response.json();
-      const posts = data?.data?.children?.map((child: any) => child.data);
-      // Update the Recoil state with the fetched posts
-      setPosts(posts);
-    };
-    fetchPostsData();
-  }, [setPosts]);
-}; */
 
 export const useFetchSubdirPosts = () => {
-  const setPosts = useSetRecoilState(postsState);
+  const setPosts = useSetRecoilState(postsStateAtom);
   const router = useRouter();
   const community = router.query
  

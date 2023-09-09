@@ -4,7 +4,7 @@ import { FaThumbsUp, FaComments, FaThumbsDown, FaSun } from 'react-icons/fa';
 import { truncateText } from '@/helper/helpers';
 import Link from 'next/link';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Post, filteredPosts, postsState, commentsState } from '@/atoms/postsAtom';
+import { Post, filteredPosts, postsStateAtom, commentsState } from '@/atoms/postsAtom';
 import { useRouter } from 'next/router';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { useFetchComments, useFetchSubdirPosts } from '@/hooks/useFetchPosts';
