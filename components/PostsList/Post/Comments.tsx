@@ -32,7 +32,7 @@ const Comments:React.FC<CommentsProps> = ({post, comments}) => {
           <button className='btn-post ' onClick={()=>{setViewComments(true)}}>View comments</button>
         </div>
        {viewComments && <ul className='mt-3 mb-10'>{comments?.map((comment: Comment)=>(
-                <li key={comment.id} className='rounded-lg border bottom-1 border-primary shadow-lg px-4 py-4 mb-2  '>{comment.author}:   {comment.body} </li>
+                <li key={comment.id} className='rounded-lg border bottom-1 border-primary shadow-lg px-4 py-4 mb-2 ' style={{wordBreak:'break-word'}}>{comment.author}:   {comment.body} </li>
             ))}</ul>}
        
       </div>
